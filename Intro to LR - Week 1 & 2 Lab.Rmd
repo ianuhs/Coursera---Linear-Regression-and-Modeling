@@ -369,7 +369,21 @@ variable you decided was the best predictor for runs.
 </div>
 ```{r diag}
 # type your code for the Exercise here, and Knit
-
+# using new_obs to check model diagnostics
+mBest <- lm(runs ~ new_obs, data = mlb11) 
+# Step 1: plot fitted values against residuals
+ggplot(data = mBest, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  xlab("Fitted values") +
+  ylab("Residuals")
+# Step 2: histogram
+ggplot(data = mBest, aes(x = .resid)) +
+  geom_histogram(binwidth = 25) +
+  xlab("Residuals")
+# Step 3: Normal probability plot of residuals
+ggplot(data = mBest, aes(sample = .resid)) +
+  stat_qq()
 ```
 
 <div id="license">
