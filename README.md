@@ -1,0 +1,1 @@
+This repository contains labs related to the Linear Regression and Modeling course offered by Duke University on Coursera. The course introduces foundational statistical modeling concepts using R, focusing on linear regression techniques.
